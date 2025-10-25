@@ -5,7 +5,6 @@ categories: firebase,javascript
 environments: Web
 status: Published
 url: https://tanabee.github.io/firebase-studio-codelab/ja/
-analytics_ga4_account: 
 feedback_link: https://github.com/tanabee/firebase-studio-codelab/issues
 
 # Firebase Studio でつくるフルスタックアプリケーション
@@ -20,11 +19,12 @@ Duration: 0:01:00
 - Firebase Studio の基本的な使い方
 - Firebase Studio におけるトラブルシューティング方法
 - Firebase Studio を用いたフルスタックなアプリケーションの構築方法
+- Firebase Studio を用いてアプリケーションに AI 機能を組み込む方法
 - Firebase Studio で作ったアプリを Firebase 環境にデプロイする方法
 
 ### 最終成果物
 
-以下のような日記アプリを開発します。（生成 AI を用いるため、同一のものが出来上がる訳ではありません。）
+以下のような AI 添削機能が組み込まれた日記アプリを開発します。（生成 AI を用いるため、同一のものが出来上がる訳ではありません。）
 
 ![Firebase Studio Final Output](./assets/firebase-studio-final-output.png)
 
