@@ -1,0 +1,26 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2025-10-23T16:56:49+09:00",
+  "id": "ja",
+  "duration": 25,
+  "title": "Firebase Studio でつくるフルスタックアプリケーション",
+  "authors": "Yuki Tanabe",
+  "summary": "Firebase Studio Hands-on",
+  "source": "src/ja.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "firebase",
+    "javascript"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/tanabee/firebase-studio-codelab/issues",
+  "url": "ja"
+}

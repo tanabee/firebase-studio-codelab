@@ -1,0 +1,185 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Firebase Studio でつくるフルスタックアプリケーション</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="ja"
+                  title="Firebase Studio でつくるフルスタックアプリケーション"
+                  environment="web"
+                  feedback-link="https://github.com/tanabee/firebase-studio-codelab/issues">
+    
+      <google-codelab-step label="Intro" duration="1">
+        <p>このハンズオンでは Firebase Studio を用いて、フルスタックな Web アプリケーションを構築します。</p>
+<h2 is-upgraded>この Codelab で得られること</h2>
+<ul>
+<li>Firebase Studio の基本的な使い方</li>
+<li>Firebase Studio におけるトラブルシューティング方法</li>
+<li>Firebase Studio を用いたフルスタックなアプリケーションの構築方法</li>
+<li>Firebase Studio で作ったアプリを Firebase 環境にデプロイする方法</li>
+</ul>
+<h2 is-upgraded>最終成果物</h2>
+<p>以下のような日記アプリを開発します。（生成 AI を用いるため、同一のものが出来上がる訳ではありません。）</p>
+<p class="image-container"><img alt="Firebase Studio Final Output" src="img/6f1e875ab34e558b.png"></p>
+<p>技術スタックは以下の通りです。</p>
+<h3 is-upgraded>技術スタック</h3>
+<ul>
+<li>Web 配信: Firebase App Hosting</li>
+<li>データベース: Firestore</li>
+<li>認証: Firebase Authentication</li>
+</ul>
+<h2 is-upgraded>前提条件</h2>
+<ul>
+<li>Google アカウントを持っていること</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Firebase Studio を触ってみる" duration="5">
+        <p><a href="https://studio.firebase.google.com/" target="_blank">https://studio.firebase.google.com</a> を開きます。</p>
+<p>以下のようなプロンプトを入力します。</p>
+<pre><code>日記アプリを開発してください。
+ユーザーが入力した内容に対して AI による添削機能をつけてください。
+最初は認証やデータベース接続は不要で、メモリ上に一時的に保存できればよいです。
+</code></pre>
+<p class="image-container"><img alt="Firebase Studio First Prompt" src="img/c5223e9fb10d9063.png"></p>
+<p>しばらくするとアプリのブループリントが出来上がるので、気になるところをカスタマイズし、「Prototype this App」を選択して生成を開始します。</p>
+<p class="image-container"><img alt="Firebase Studio Blue Print" src="img/466ecb6ac7c82769.png"></p>
+<p>Gemini の API キーを求められたら、以下のサイトから API キーを作成します。</p>
+<p><a href="https://aistudio.google.com/api-keys" target="_blank">https://aistudio.google.com/api-keys</a></p>
+<p class="image-container"><img alt="Firebase Studio Gemini Api Key" src="img/a070ad5e680d433.png"></p>
+<p>Web アプリケーションが作成されます。</p>
+<p class="image-container"><img alt="Firebase Studio First Output" src="img/be543e72e9908797.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="トラブルシューティング" duration="5">
+        <h2 is-upgraded>エラーの解消</h2>
+<p>エラーが発生した場合の解決方法を紹介します。左下のアイコンからエラー内容を確認できます。</p>
+<p>エラーを開いて <code>Fix Error</code> というボタンが表示された場合には、ボタン選択で該当のエラーの修正を進めてくれます。 <img alt="Firebase Studio Fix Error Button" src="img/a102ae2521b63688.png"></p>
+<p><code>Fix Error</code> ボタンが表示されない場合にはエラー内容をコピーして貼り付ければ OK です。 <img alt="Firebase Studio Fix Error Copy And Paste" src="img/442b9250b978dc6.png"></p>
+<h2 is-upgraded>前の状態に戻す</h2>
+<p>途中でエラーになって修正できない場合には前の正常な状態に戻した方が良い場合もあります。</p>
+<p>前の状態に戻すには Code View に切り替えます。 <img alt="Firebase Console Code" src="img/f9703eecce1eea39.png"></p>
+<p>Source Control メニューから該当の箇所に戻ることができます。ユーザーがメッセージを送信した単位で状態が保存されています。 <img alt="Firebase Studio Checkout" src="img/106c432e67e37b5f.png"></p>
+<h2 is-upgraded>効果的なプロンプト</h2>
+<p>生成された結果が期待どおりでない場合は、詳細を追加することや、具体的な指示を提供することで、プロンプトを調整できます。公式ドキュメントの <a href="https://firebase.google.com/docs/studio/prompting?hl=ja#refining-prompts" target="_blank">追加のプロンプトを使用して回答の質を高める</a> を参考に修正依頼をしましょう。</p>
+<ul>
+<li><strong>制約を追加する</strong>: UI、データモデル、または機能に関する制約を規定します。</li>
+<li><strong>例を示す</strong>: ユーザーがアプリを操作する方法と表示されるデータの例を示します。</li>
+<li><strong>キーワードを使用する</strong>: LLM が必要な出力のクラスに関連付けることができる機能を記述するには、キーワードを使用します。たとえば、アプリが Google のデザイン基準に準拠していることを示すプロンプトでマテリアル デザインを使用できます。</li>
+<li><strong>特定の変更を依頼する</strong>: 生成されたコードまたはブループリントの特定の変更を依頼します。各機能リクエストは別々のリクエストで追加してください。</li>
+<li><strong>モデルに推論を依頼する</strong>: 目的の結果が得られないトラブルがある場合は、プロンプトを使用して推論するようにモデルに依頼してみてください。たとえば、こう依頼します。「順を追って考えてください。タスクアプリの入力ボックスを作成したい。[タスクを追加] ボタンと [キャンセル] ボタンを含める必要があります。</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="カスタマイズを依頼する" duration="3">
+        <p>簡単なカスタマイズを依頼してみます。カスタマイズの例を以下にいくつか紹介します。</p>
+<ul>
+<li>アプリケーションで使用する色を変更する</li>
+<li>アプリ名を変更する</li>
+<li>細かいテキストを修正する</li>
+</ul>
+<h2 is-upgraded>アプリケーションで使用する色を変更する</h2>
+<p class="image-container"><img alt="Firebase Studio Before Change Color" src="img/9b7ee83b717d0752.png"></p>
+<p class="image-container"><img alt="Firebase Studio After Change Color" src="img/f495a225b75fbe8e.png"></p>
+<h2 is-upgraded>細かいテキストを修正する</h2>
+<p class="image-container"><img alt="Firebase Studio Before Change Text" src="img/4b7b9a0ee1bf2d11.png"></p>
+<p class="image-container"><img alt="Firebase Studio After Change Text" src="img/400849049f7dd51b.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="認証とデータベースの追加" duration="5">
+        <p>以下のプロンプトを送信して、認証とデータベース機能を追加します。</p>
+<pre><code>以下の仕様で認証機能の追加とデータベースとの接続をお願いします。
+
+- 認証：Firebase Authentication
+  - メールアドレスとパスワードによる認証
+  - 機能
+    - サインアップ
+    - ログイン
+    - ログアウト
+- データベース: Firestore
+  - 日記の保存先: users/:userId/posts/:postId
+</code></pre>
+<p>サインアップと日記の投稿をして動作を確認します。実際に Firebase Authentication と Firestore と接続されているか確認します。まずは以下の画像のオレンジの枠の部分を選択して Firebase Project に移動します。</p>
+<p class="image-container"><img alt="Firebase Studio - Open Firebase Console" src="img/504c68aabd86805f.png"></p>
+<p>Authentication メニューを見ると、サインアップされたユーザー情報が追加されています。</p>
+<p class="image-container"><img alt="Firebase Console Authentication" src="img/b784528e799d1d70.png"></p>
+<p>Firestore メニューを見ると、投稿された日記の内容が保存されていることを確認できます。</p>
+<p class="image-container"><img alt="Firebase Console Firestore" src="img/303419119ec4d48e.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Firebase 環境へのデプロイ" duration="5">
+        <p>Firebase 環境にデプロイすると、自分以外のユーザーに使ってもらうことができます。</p>
+<p>Publish ボタンを押します。</p>
+<p class="image-container"><img alt="Firebase Console Publish" src="img/a70e2dfaedb358db.png"></p>
+<p>Google Cloud Platform の課金情報と紐づけます。これは Firebase App Hosting を利用するために必要な手続きですが、ある程度の規模までは無料枠の範囲で利用可能です。</p>
+<p class="image-container"><img alt="Firebase Studio Link To GCP Billing" src="img/eb2ebeb05ce7f056.png"></p>
+<p>デプロイが成功すると生成された URL からアクセスできるようになります。</p>
+<p class="image-container"><img alt="Firebase Studio Complete Deployment" src="img/9177f0dc1e52402d.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Congrats!" duration="1">
+        <p>以上でこのハンズオンは終わりです。時間に余裕のある方はカスタマイズしてみてください。カスタマイズの例をいくつか紹介します。</p>
+<ul>
+<li>日記をサイドバーに一覧表示させる</li>
+<li>カレンダー表示して指定した日の日記にアクセスできる</li>
+<li>日記のタイトルを生成 AI で作ってもらう</li>
+<li>生成 AI を用いた特定の期間（週・月など）のサマリ生成</li>
+<li>日記の公開・非公開の制御</li>
+<li>ユーザー間のフォロー機能</li>
+</ul>
+<p>また、もっと Firebase Studio を深く理解したい人向けは以下のリンクからより詳しい情報を得られます。</p>
+<h2 is-upgraded>参考リンク</h2>
+<ul>
+<li><a href="https://firebase.google.com/docs/studio?hl=ja" target="_blank">Firebase 公式ドキュメント</a></li>
+<li><a href="https://firebase.google.com/docs/studio/mcp-servers?hl=ja" target="_blank">Model Context Protocol（MCP）サーバーに接続する</a></li>
+<li><a href="https://firebase.google.com/docs/studio/get-started-template?hl=ja&template_type=official" target="_blank">Firebase Studio テンプレートを使ってみる</a></li>
+<li><a href="https://firebase.google.com/docs/studio/pricing?hl=ja" target="_blank">Firebase Studio の料金、割り当て、上限</a></li>
+<li><a href="https://firebase.google.com/docs/studio/github?hl=ja" target="_blank">アプリを GitHub にアップロードする</a></li>
+<li><a href="https://firebase.blog/posts/2025/07/firebase-studio-gemini-cli/" target="_blank">Enhance Your Firebase Studio Workflow with Gemini CLI</a></li>
+<li><a href="https://firebase.blog/posts/2025/09/firebase-studio-builder-io-design-development" target="_blank">Bridge the design to development gap with Builder.io and Firebase Studio</a></li>
+</ul>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
