@@ -5,7 +5,7 @@
 ## ドキュメント生成
 
 ```sh
-claat export -o dist src/ja.md
+claat export -o docs src/ja.md
 ```
 
-`dist/` ディレクトリ以下に生成されたコンテンツが出力されます。
+`docs/` ディレクトリ以下に生成されたコンテンツが出力されます。
