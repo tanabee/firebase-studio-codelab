@@ -2,6 +2,8 @@
 
 Firebase Studio を使ったフルスタック Web アプリケーション開発のハンズオン資料です。生成 AI と Firebase を組み合わせ、日記アプリを作りながら以下の内容を学びます。
 
+ハンズオンへのアクセス: https://tanabee.github.io/firebase-studio-codelab/ja/
+
 - Firebase Studio の基本操作とプロンプトの改善手法
 - 生成されたコードのトラブルシューティングとロールバック
 - Firebase Authentication と Firestore による認証とデータ永続化の統合
