@@ -60,8 +60,10 @@
         <p><a href="https://studio.firebase.google.com/" target="_blank">https://studio.firebase.google.com</a> を開きます。</p>
 <p>以下のようなプロンプトを入力します。</p>
 <pre><code>日記アプリを開発してください。
-ユーザーが入力した内容に対して AI による添削機能をつけてください。
+ユーザーが入力した内容に対して、保存前に添削できる AI 添削機能をつけてください。
 最初は認証やデータベース接続は不要で、メモリ上に一時的に保存できればよいです。
+
+フォームでの実装には、react-hook-form ライブラリを用いてください。
 </code></pre>
 <p class="image-container"><img alt="Firebase Studio First Prompt" src="img/c5223e9fb10d9063.png"></p>
 <p>しばらくするとアプリのブループリントが出来上がるので、気になるところをカスタマイズし、「Prototype this App」を選択して生成を開始します。</p>
@@ -82,8 +84,7 @@
 <p><code>Fix Error</code> ボタンが表示されない場合にはエラー内容をコピーして貼り付ければ OK です。 <img alt="Firebase Studio Fix Error Copy And Paste" src="img/442b9250b978dc6.png"></p>
 <h2 is-upgraded>前の状態に戻す</h2>
 <p>途中でエラーになって修正できない場合には前の正常な状態に戻した方が良い場合もあります。</p>
-<p>前の状態に戻すには Code View に切り替えます。 <img alt="Firebase Console Code" src="img/f9703eecce1eea39.png"></p>
-<p>Source Control メニューから該当の箇所に戻ることができます。ユーザーがメッセージを送信した単位で状態が保存されています。 <img alt="Firebase Studio Checkout" src="img/106c432e67e37b5f.png"></p>
+<p>ユーザーからのメッセージ毎にチェックポイントが作成されるので、 Restore ボタンを選択すると特定のタイミングに戻すことができます。 <img alt="Firebase Console Restore" src="img/16a256512bc68d5f.png"></p>
 <h2 is-upgraded>効果的なプロンプト</h2>
 <p>生成された結果が期待どおりでない場合は、詳細を追加することや、具体的な指示を提供することで、プロンプトを調整できます。公式ドキュメントの <a href="https://firebase.google.com/docs/studio/prompting?hl=ja#refining-prompts" target="_blank">追加のプロンプトを使用して回答の質を高める</a> を参考に修正依頼をしましょう。</p>
 <ul>
@@ -127,6 +128,7 @@
 - データベース: Firestore
   - 日記の保存先: users/:userId/posts/:postId
 </code></pre>
+<p>※ <a href="https://firebase.google.com/docs/studio/get-started-ai?hl=ja#iterate" target="_blank">Firebase Studio の公式ドキュメント</a> では「ヒント: アプリ プロトタイピング エージェントは、初期のアプリ ブループリントではなく、イテレーション フェーズでアプリに Cloud Firestore と Firebase Authentication を追加できます。」と記載があります。そのため、最初のプロンプトではなく、このタイミングで認証とデータベース接続を行います。</p>
 <p>サインアップと日記の投稿をして動作を確認します。実際に Firebase Authentication と Firestore と接続されているか確認します。まずは以下の画像のオレンジの枠の部分を選択して Firebase Project に移動します。</p>
 <p class="image-container"><img alt="Firebase Studio - Open Firebase Console" src="img/504c68aabd86805f.png"></p>
 <p>Authentication メニューを見ると、サインアップされたユーザー情報が追加されています。</p>

@@ -49,8 +49,10 @@ Duration: 0:05:00
 
 ```
 日記アプリを開発してください。
-ユーザーが入力した内容に対して AI による添削機能をつけてください。
+ユーザーが入力した内容に対して、保存前に添削できる AI 添削機能をつけてください。
 最初は認証やデータベース接続は不要で、メモリ上に一時的に保存できればよいです。
+
+フォームでの実装には、react-hook-form ライブラリを用いてください。
 ```
 
 ![Firebase Studio First Prompt](./assets/firebase-studio-first-prompt.png)
@@ -86,11 +88,8 @@ Duration: 0:05:00
 
 途中でエラーになって修正できない場合には前の正常な状態に戻した方が良い場合もあります。
 
-前の状態に戻すには Code View に切り替えます。
-![Firebase Console Code](./assets/firebase-console-code.png)
-
-Source Control メニューから該当の箇所に戻ることができます。ユーザーがメッセージを送信した単位で状態が保存されています。
-![Firebase Studio Checkout](./assets/firebase-studio-checkout.png)
+ユーザーからのメッセージ毎にチェックポイントが作成されるので、 Restore ボタンを選択すると特定のタイミングに戻すことができます。
+![Firebase Console Restore](./assets/firebase-studio-restore.png)
 
 ### 効果的なプロンプト
 
@@ -140,6 +139,8 @@ Duration: 0:05:00
 - データベース: Firestore
   - 日記の保存先: users/:userId/posts/:postId
 ```
+
+※ [Firebase Studio の公式ドキュメント](https://firebase.google.com/docs/studio/get-started-ai?hl=ja#iterate) では「ヒント: アプリ プロトタイピング エージェントは、初期のアプリ ブループリントではなく、イテレーション フェーズでアプリに Cloud Firestore と Firebase Authentication を追加できます。」と記載があります。そのため、最初のプロンプトではなく、このタイミングで認証とデータベース接続を行います。
 
 サインアップと日記の投稿をして動作を確認します。実際に Firebase Authentication と Firestore と接続されているか確認します。まずは以下の画像のオレンジの枠の部分を選択して Firebase Project に移動します。
 
