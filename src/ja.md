@@ -10,7 +10,7 @@ feedback_link: https://github.com/tanabee/firebase-studio-codelab/issues
 # Firebase Studio でつくるフルスタックアプリケーション
 
 ## Intro
-Duration: 0:01:00
+Duration: 0:02:00
 
 このハンズオンでは Firebase Studio を用いて、フルスタックな Web アプリケーションを構築します。
 
@@ -41,7 +41,7 @@ Duration: 0:01:00
 - Google アカウントを持っていること
 
 ## Firebase Studio を触ってみる
-Duration: 0:05:00
+Duration: 0:10:00
 
 [https://studio.firebase.google.com](https://studio.firebase.google.com/) を開きます。
 
@@ -70,7 +70,7 @@ Web アプリケーションが作成されます。
 ![Firebase Studio First Output](./assets/firebase-studio-first-output.png)
 
 ## トラブルシューティング
-Duration: 0:05:00
+Duration: 0:03:00
 
 ### エラーの解消
 
@@ -121,7 +121,7 @@ Duration: 0:03:00
 ![Firebase Studio After Change Text](./assets/firebase-studio-after-change-text.png)
 
 ## 認証とデータベースの追加
-Duration: 0:05:00
+Duration: 0:10:00
 
 以下のプロンプトを送信して、認証とデータベース機能を追加します。
 
@@ -153,7 +153,7 @@ Firestore メニューを見ると、投稿された日記の内容が保存さ�
 ![Firebase Console Firestore](./assets/firebase-console-firestore.png)
 
 ## Firebase 環境へのデプロイ
-Duration: 0:05:00
+Duration: 0:10:00
 
 Firebase 環境にデプロイすると、自分以外のユーザーに使ってもらうことができます。
 
@@ -170,7 +170,7 @@ Google Cloud Platform の課金情報と紐づけます。これは Firebase App
 ![Firebase Studio Complete Deployment](./assets/firebase-studio-complete-deployment.png)
 
 ## Congrats!
-Duration: 0:01:00
+Duration: 0:02:00
 
 以上でこのハンズオンは終わりです。時間に余裕のある方はカスタマイズしてみてください。カスタマイズの例をいくつか紹介します。
 
