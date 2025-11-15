@@ -51,8 +51,6 @@ Duration: 0:05:00
 日記アプリを開発してください。
 ユーザーが入力した内容に対して、保存前に添削できる AI 添削機能をつけてください。
 最初は認証やデータベース接続は不要で、メモリ上に一時的に保存できればよいです。
-
-フォームでの実装には、react-hook-form ライブラリを用いてください。
 ```
 
 ![Firebase Studio First Prompt](./assets/firebase-studio-first-prompt.png)
