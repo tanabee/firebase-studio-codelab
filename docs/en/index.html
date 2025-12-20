@@ -1,0 +1,186 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Building a Full-Stack Application with Firebase Studio</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="en"
+                  title="Building a Full-Stack Application with Firebase Studio"
+                  environment="web"
+                  feedback-link="https://github.com/tanabee/firebase-studio-codelab/issues">
+    
+      <google-codelab-step label="Intro" duration="2">
+        <p>In this hands-on tutorial, you will build a full-stack web application using Firebase Studio.</p>
+<h2 is-upgraded>What You&#39;ll Learn in This Codelab</h2>
+<ul>
+<li>Basic usage of Firebase Studio</li>
+<li>Troubleshooting methods in Firebase Studio</li>
+<li>How to build a full-stack application using Firebase Studio</li>
+<li>How to integrate AI features into your application using Firebase Studio</li>
+<li>How to deploy an app created with Firebase Studio to a Firebase environment</li>
+</ul>
+<h2 is-upgraded>Final Output</h2>
+<p>You will develop a diary app with an AI proofreading feature as shown below. (Since generative AI is used, the exact output may vary.)</p>
+<p class="image-container"><img alt="Firebase Studio Final Output" src="img/4851b4ff6124a511.png"></p>
+<p>The technology stack is as follows:</p>
+<h3 is-upgraded>Technology Stack</h3>
+<ul>
+<li>Hosting: Firebase App Hosting</li>
+<li>Database: Firestore</li>
+<li>Authentication: Firebase Authentication</li>
+</ul>
+<h2 is-upgraded>Prerequisites</h2>
+<ul>
+<li>You have a Google account</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Getting Started with Firebase Studio" duration="10">
+        <p>Open <a href="https://studio.firebase.google.com/" target="_blank">https://studio.firebase.google.com</a>.</p>
+<p>Enter a prompt like the following:</p>
+<pre><code>Please develop a diary app.
+Add an AI proofreading feature that allows users to proofread their entries before saving.
+Authentication and database connection are not needed at first; temporary storage in memory is sufficient.
+</code></pre>
+<p class="image-container"><img alt="Firebase Studio First Prompt" src="img/c5223e9fb10d9063.png"></p>
+<p>After a while, the app blueprint will be generated. Customize any parts you&#39;d like, then select &#34;Prototype this App&#34; to start generation.</p>
+<p class="image-container"><img alt="Firebase Studio Blue Print" src="img/466ecb6ac7c82769.png"></p>
+<p>If you&#39;re asked for a Gemini API key, create one from the following site:</p>
+<p><a href="https://aistudio.google.com/api-keys" target="_blank">https://aistudio.google.com/api-keys</a></p>
+<p class="image-container"><img alt="Firebase Studio Gemini Api Key" src="img/a070ad5e680d433.png"></p>
+<p>The web application will be created.</p>
+<p class="image-container"><img alt="Firebase Studio First Output" src="img/be543e72e9908797.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Troubleshooting" duration="3">
+        <h2 is-upgraded>Resolving Errors</h2>
+<p>Here&#39;s how to resolve errors when they occur. You can check error details from the icon in the lower left corner.</p>
+<p>If you open the error and see a <code>Fix Error</code> button, selecting it will proceed with fixing that error. <img alt="Firebase Studio Fix Error Button" src="img/a102ae2521b63688.png"></p>
+<p>If the <code>Fix Error</code> button is not displayed, simply copy and paste the error content. <img alt="Firebase Studio Fix Error Copy And Paste" src="img/442b9250b978dc6.png"></p>
+<h2 is-upgraded>Restoring to a Previous State</h2>
+<p>If errors occur and cannot be fixed, it may be better to restore to a previous working state.</p>
+<p>Checkpoints are created for each user message, so you can restore to a specific point by selecting the Restore button. <img alt="Firebase Console Restore" src="img/16a256512bc68d5f.png"></p>
+<h2 is-upgraded>Effective Prompts</h2>
+<p>If the generated results are not as expected, you can adjust your prompts by adding details or providing specific instructions. Refer to the official documentation <a href="https://firebase.google.com/docs/studio/prompting#refining-prompts" target="_blank">Refining prompts to improve response quality</a> for guidance on making revision requests.</p>
+<ul>
+<li><strong>Add constraints</strong>: Specify constraints regarding the UI, data model, or functionality.</li>
+<li><strong>Provide examples</strong>: Show examples of how users will interact with the app and what data will be displayed.</li>
+<li><strong>Use keywords</strong>: Use keywords to describe features that the LLM can associate with the required output class. For example, you can use Material Design in prompts to indicate that the app should comply with Google&#39;s design standards.</li>
+<li><strong>Request specific changes</strong>: Request specific changes to the generated code or blueprint. Add each feature request in separate requests.</li>
+<li><strong>Ask the model to reason</strong>: If you&#39;re having trouble getting the desired result, try asking the model to reason through the prompt. For example, you can request: &#34;Think step by step. I want to create an input box for a task app. It needs to include an ‘Add Task&#39; button and a ‘Cancel&#39; button.&#34;</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Requesting Customizations" duration="3">
+        <p>Let&#39;s try requesting some simple customizations. Here are some examples:</p>
+<ul>
+<li>Change the colors used in the application</li>
+<li>Change the app name</li>
+<li>Modify specific text</li>
+</ul>
+<h2 is-upgraded>Changing the Colors Used in the Application</h2>
+<p class="image-container"><img alt="Firebase Studio Before Change Color" src="img/9b7ee83b717d0752.png"></p>
+<p class="image-container"><img alt="Firebase Studio After Change Color" src="img/f495a225b75fbe8e.png"></p>
+<h2 is-upgraded>Modifying Specific Text</h2>
+<p class="image-container"><img alt="Firebase Studio Before Change Text" src="img/4b7b9a0ee1bf2d11.png"></p>
+<p class="image-container"><img alt="Firebase Studio After Change Text" src="img/400849049f7dd51b.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Adding Authentication and Database" duration="10">
+        <p>Send the following prompt to add authentication and database functionality:</p>
+<pre><code>Please add authentication and database connection with the following specifications:
+
+- Authentication: Firebase Authentication
+  - Email and password authentication
+  - Features:
+    - Sign up
+    - Login
+    - Logout
+- Database: Firestore
+  - Diary storage path: users/:userId/posts/:postId
+</code></pre>
+<p>Note: The <a href="https://firebase.google.com/docs/studio/get-started-ai#iterate" target="_blank">Firebase Studio official documentation</a> states: &#34;Tip: The app prototyping agent can add Cloud Firestore and Firebase Authentication to your app during the iteration phase, rather than in the initial app blueprint.&#34; Therefore, we add authentication and database connection at this point rather than in the initial prompt.</p>
+<p>Sign up and post a diary entry to verify the functionality. Let&#39;s confirm that it&#39;s actually connected to Firebase Authentication and Firestore. First, select the orange-framed area in the image below to navigate to the Firebase Project.</p>
+<p class="image-container"><img alt="Firebase Studio - Open Firebase Console" src="img/504c68aabd86805f.png"></p>
+<p>In the Authentication menu, you can see that the signed-up user information has been added.</p>
+<p class="image-container"><img alt="Firebase Console Authentication" src="img/b784528e799d1d70.png"></p>
+<p>In the Firestore menu, you can confirm that the posted diary content has been saved.</p>
+<p class="image-container"><img alt="Firebase Console Firestore" src="img/303419119ec4d48e.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Deploying to Firebase Environment" duration="10">
+        <p>Deploying to a Firebase environment allows other users to use your app.</p>
+<p>Press the Publish button.</p>
+<p class="image-container"><img alt="Firebase Console Publish" src="img/a70e2dfaedb358db.png"></p>
+<p>Link to Google Cloud Platform billing information. This is a required procedure to use Firebase App Hosting, but it can be used within the free tier up to a certain scale.</p>
+<p class="image-container"><img alt="Firebase Studio Link To GCP Billing" src="img/eb2ebeb05ce7f056.png"></p>
+<p>Once deployment is successful, you can access the app from the generated URL.</p>
+<p class="image-container"><img alt="Firebase Studio Complete Deployment" src="img/9177f0dc1e52402d.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Congrats!" duration="2">
+        <p>This concludes the hands-on tutorial. If you have extra time, try customizing further. Here are some customization examples:</p>
+<ul>
+<li>Display diary entries in a sidebar list</li>
+<li>Calendar view to access diary entries for specific dates</li>
+<li>Generate diary titles using generative AI</li>
+<li>Generate summaries for specific periods (weekly, monthly, etc.) using generative AI</li>
+<li>Control public/private visibility of diary entries</li>
+<li>Follow feature between users</li>
+</ul>
+<p>For those who want to understand Firebase Studio more deeply, you can find more detailed information from the following links:</p>
+<h2 is-upgraded>Reference Links</h2>
+<ul>
+<li><a href="https://firebase.google.com/docs/studio" target="_blank">Firebase Official Documentation</a></li>
+<li><a href="https://firebase.google.com/docs/studio/mcp-servers" target="_blank">Connect to Model Context Protocol (MCP) Servers</a></li>
+<li><a href="https://firebase.google.com/docs/studio/get-started-template?template_type=official" target="_blank">Get Started with Firebase Studio Templates</a></li>
+<li><a href="https://firebase.google.com/docs/studio/pricing" target="_blank">Firebase Studio Pricing, Quotas, and Limits</a></li>
+<li><a href="https://firebase.google.com/docs/studio/github" target="_blank">Upload Your App to GitHub</a></li>
+<li><a href="https://firebase.blog/posts/2025/07/firebase-studio-gemini-cli/" target="_blank">Enhance Your Firebase Studio Workflow with Gemini CLI</a></li>
+<li><a href="https://firebase.blog/posts/2025/09/firebase-studio-builder-io-design-development" target="_blank">Bridge the design to development gap with Builder.io and Firebase Studio</a></li>
+</ul>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>

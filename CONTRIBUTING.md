@@ -5,7 +5,7 @@
 ## ドキュメント生成
 
 ```sh
-claat export -o docs src/ja.md
+claat export -o docs src/*.md
 ```
 
 `docs/` ディレクトリ以下に生成されたコンテンツが出力されます。

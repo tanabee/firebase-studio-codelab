@@ -1,0 +1,26 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2025-12-20T09:52:01+09:00",
+  "id": "en",
+  "duration": 40,
+  "title": "Building a Full-Stack Application with Firebase Studio",
+  "authors": "Yuki Tanabe",
+  "summary": "Firebase Studio Hands-on",
+  "source": "src/en.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "firebase",
+    "javascript"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/tanabee/firebase-studio-codelab/issues",
+  "url": "en"
+}
