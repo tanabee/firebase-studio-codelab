@@ -1,23 +1,23 @@
 # Firebase Studio Codelab
 
-Firebase Studio を使ったフルスタック Web アプリケーション開発のハンズオン資料です。生成 AI と Firebase を組み合わせ、日記アプリを作りながら以下の内容を学びます。
+This is a hands-on tutorial for full-stack web application development using Firebase Studio. You will learn the following while building a diary app that combines generative AI and Firebase.
 
-ハンズオンへのアクセス: https://tanabee.github.io/firebase-studio-codelab/ja/
+Access the hands-on tutorial: https://tanabee.github.io/firebase-studio-codelab/en/
 
-- Firebase Studio の基本操作とプロンプトの改善手法
-- 生成されたコードのトラブルシューティングとロールバック
-- Firebase Authentication と Firestore による認証とデータ永続化の統合
-- Firebase App Hosting を用いたデプロイ手順
+- Basic operations of Firebase Studio and prompt improvement techniques
+- Troubleshooting and rollback of generated code
+- Integration of authentication and data persistence with Firebase Authentication and Firestore
+- Deployment procedures using Firebase App Hosting
 
-ハンズオンの最終成果物は、AI 添削機能付きの日記アプリです。生成 AI を活用して UI をカスタマイズしたり、追加機能を実装したりする方法も紹介しています。
+The final output of this hands-on tutorial is a diary app with an AI proofreading feature. It also introduces how to customize the UI and implement additional features using generative AI.
 
-![AI 添削機能付き日記アプリ](./src/assets/firebase-studio-final-output.png)
+![Diary App with AI Proofreading Feature](./src/assets/firebase-studio-final-output.png)
 
-## 前提条件
+## Prerequisites
 
-- Google アカウントを保持していること
-- Firebase Studio にアクセスできる環境であること
+- You have a Google account
+- You have access to Firebase Studio
 
-## コントリビューション
+## Contributing
 
-資料の生成手順などの詳細は [CONTRIBUTING.md](CONTRIBUTING.md) を参照してください。
+For details on how to generate the tutorial materials, please refer to [CONTRIBUTING.md](CONTRIBUTING.md).
