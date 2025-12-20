@@ -110,11 +110,25 @@ Let's try requesting some simple customizations. Here are some examples:
 
 ### Changing the Colors Used in the Application
 
+Send the prompt below.
+
+```
+Change the main color to a soft green.
+```
+
 ![Firebase Studio Before Change Color](./assets/firebase-studio-before-change-color.png)
 
 ![Firebase Studio After Change Color](./assets/firebase-studio-after-change-color.png)
 
 ### Modifying Specific Text
+
+Send the prompt below.
+
+```
+Change as follows:
+- Improve with AI → AI 添削
+- Save Entry → 保存
+```
 
 ![Firebase Studio Before Change Text](./assets/firebase-studio-before-change-text.png)
 
